@@ -1,6 +1,7 @@
 <html>
 <body>
 <?php
+	session_start();
 	$db = mysqli_connect('localhost', 'root', '', 'ratemystudents')
 		or die ("ERROR: connecting to mysql server");
 		
@@ -19,7 +20,10 @@
 			VALUES ('" . $ln . "', '" . $fn . "', '" . $em . "', SHA('" . $pw . "'))";
 		$result = mysqli_query($db, $query)
 			or die("Error Querying Database");
-		header("Location: main.php");    //change main.php to wherever we want the user to be sent once they create account
+		
+			$_SESSION['email'] = "$em";
+
+		header("Location: homepage.php");    //change homepage.php to wherever we want the user to be sent once they create account
 	}
 ?>
 </body>
