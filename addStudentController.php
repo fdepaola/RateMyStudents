@@ -12,5 +12,5 @@
 
 	$result = mysqli_query($db, $query) or die(mysqli_error($db));
 
-	header("Location: home.html");
+	header("Location: home.php");
 ?>

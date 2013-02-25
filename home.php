@@ -26,13 +26,11 @@ function clearText(field)
 	
 	<div id="templatemo_menu">
 		<ul>
-			<li><a href="home.php">home</a></li>
-			<li><a href="addUser.html">add user</a></li>
-			<li><a href="addStudent.html">add student</a></li>
-			<li><a href="deleteStudent.html">delete student</a></li>
-			<li><a href="findStudent.html">find student</a></li>
-			<li><a href="createStudent.html">rate student</a></li>
-			<li><a href="logoutController.php" class="last">log out</a></li>
+            <li><a href="home.php">home</a></li>
+            <li><a href="addStudent.html">add student</a></li>
+            <li><a href="deleteUser.html">delete user</a></li>
+            <li><a href="login.html">log in</a></li>
+            <li><a href="logoutController.php" class="last">log out</a></li>
 		</ul>       
 	</div> <!-- end of templatemo_menu -->
 

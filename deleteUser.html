@@ -23,20 +23,27 @@ function clearText(field)
     <div id="templatemo_menu">
         <ul>
             <li><a href="home.php">home</a></li>
-            <li><a href="addUser.html">add user</a></li>
             <li><a href="addStudent.html">add student</a></li>
-            <li><a href="deleteStudent.html">delete student</a></li>
-            <li><a href="findStudent.html">find student</a></li>
-            <li><a href="createStudent.html">rate student</a></li>
+            <li><a href="deleteUser.html">delete user</a></li>
+            <li><a href="login.html">log in</a></li>
             <li><a href="logoutController.php" class="last">log out</a></li>
         </ul>       
     </div> <!-- end of templatemo_menu -->
     
     <div id="templatemo_main">
     	<div class="col_w620 float_l">
-            <form method = "post" action = "deleteStudent.php">
+            <form method = "post" action = "deleteUserController.php">
 				<table>
-					<tr><td>Student Name:</td><td><input type="text" id="name" name="name" /></td></tr>
+					<tr>
+                        <td>Student first name:</td><td><input type="text" id="first_name" name="first_name" /></td>
+                    </tr>
+                    <tr>
+                        <td>Student last name:</td><td><input type="text" id="last_name" name="last_name" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="delete user" /></td>
+                    </tr>
+
 				</table>
 			</form>
         </div>
