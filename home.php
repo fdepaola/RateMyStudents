@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php 
+	session_start(); 
+?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -29,7 +31,7 @@ function clearText(field)
 			<li><a href="addStudent.html">add student</a></li>
 			<li><a href="deleteStudent.html">delete student</a></li>
 			<li><a href="findStudent.html">find student</a></li>
-			<li><a href="rateStudent.html">rate student</a></li>
+			<li><a href="createStudent.html">rate student</a></li>
 			<li><a href="logoutController.php" class="last">log out</a></li>
 		</ul>       
 	</div> <!-- end of templatemo_menu -->
@@ -37,6 +39,7 @@ function clearText(field)
 	<div id="templatemo_main">
 		<div class="col_w620 float_l">
 			<?php 
+				echo "Note: one cannot actually rate students yet.";
 				require("listStudents.php");
 			?>
 		</div>
