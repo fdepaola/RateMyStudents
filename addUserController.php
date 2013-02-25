@@ -18,6 +18,6 @@
 			VALUES ('" . $ln . "', '" . $fn . "', '" . $em . "', SHA('" . $pw . "'))";
 		$result = mysqli_query($db, $query) or die(mysqli_error($db));	
 		$_SESSION['email'] = "$em";
-		header("Location: homepage.php");    //change homepage.php to wherever we want the user to be sent once they create account
+		header("Location: home.html");    //change home.php to wherever we want the user to be sent once they create account
 	}
 ?>

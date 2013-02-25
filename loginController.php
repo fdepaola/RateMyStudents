@@ -21,11 +21,11 @@
 		
 	if (!isset($rowExists)) {
 		echo"Wrong password/Username combination";
-		header("Location: loginAgain.html");
+		header("Location: login.html");
 	}
 	
 	else {
 		$_SESSION['email'] = "$em";
-		header("Location: homepage.php");
+		header("Location: home.html");
 	}
 ?>

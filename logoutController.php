@@ -2,5 +2,5 @@
 	session_start();
 	session_destroy();
 	unset($_SESSION['email']);
-	header("Location: loginAfterLogout.html");
+	header("Location: login.html");
 ?>
