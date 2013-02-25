@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	$db = mysqli_connect('localhost', 'root', '', 'ratemystudents')
-		or die ("ERROR: connecting to mysql server");
+		 or die(mysqli_error($db));
 
 	$firstname = $_POST['firstname'];
 	$lastname = $_POST['lastname'];
