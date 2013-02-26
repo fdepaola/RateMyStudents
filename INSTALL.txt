@@ -1,0 +1,8 @@
+1. Go to https://github.com/RateMyStudents/RateMyStudents and clone the Rate My Students folder into your htdocs folder
+2. In your XAMPP Control Panel, start Apache and MySQL.
+3. Navigate your browser to localhost/phpmyadmin
+4. On the header of tabs that have Databases, SQL, Status, Users, etc.. Click on the tab, "Import"
+5. Import the file rateMyStudents_DB.sql from htdocs/RateMyStudents and click "Go".
+6. The database has now been sourced
+
+Navigate your browser to localhost/RateMyStudents/addUser.html and enjoy our website.
