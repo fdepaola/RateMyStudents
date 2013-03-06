@@ -31,7 +31,7 @@ CREATE TABLE `student` (
   `lazy` int(11) NOT NULL,
   `smelly` int(11) NOT NULL,
   `integrity` int(11) NOT NULL,
-  `vote` int(11) NOT NULL DEFAULT '0',
+  `vote` int(11) NOT NULL DEFAULT 0,
   `major` varchar(50) DEFAULT NULL,
   `comments` blob,
   PRIMARY KEY (`student_id`)
