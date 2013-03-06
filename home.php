@@ -37,6 +37,15 @@ function clearText(field)
 	<div id="templatemo_main">
 		<div class="col_w620 float_l">
 			<?php 
+				<b> or sign up </b>
+				<form method="post" action="changePassword.php">
+					<table>
+						<tr><td>Current Password:</td><td><input type="text" id="opw" name="opw" /></td></tr>
+						<tr><td>Choose new Password:</td><td><input type="password" id="pw" name="pw" /></td></tr>
+						<tr><td>Re-type new Password:</td><td><input type="password" id="pw2" name="pw2" /></td></tr>
+						<tr><td><input type="submit" value="change" /></td></tr>
+					</table>
+				</form>
 				echo "Note: one cannot actually rate students yet.";
 				require("listStudents.php");
 			?>
