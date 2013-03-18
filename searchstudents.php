@@ -33,7 +33,7 @@
 			if(isset($_POST['target']))
 			{
 				$target = $_POST['target'];
-			    $query = "SELECT first_name,last_name FROM student  WHERE first_name LIKE '%$target%' OR last_name LIKE '%$target%'";  
+			    $query = "SELECT first_name,last_name FROM student WHERE first_name LIKE '%$target%' OR last_name LIKE '%$target%'";  
 		   		$result = mysqli_query($db, $query) or die(mysqli_error($db));
 				$beenInWhile = 0;
 				echo "<table>";

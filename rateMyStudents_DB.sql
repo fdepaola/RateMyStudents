@@ -55,7 +55,6 @@ CREATE TABLE IF NOT EXISTS `user` (
   `first_name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `department_id` int(2) NOT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
@@ -63,14 +62,14 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `last_name`, `first_name`, `email`, `password`, `department_id`) VALUES
-(1, 'Crawford', 'Michael', 'mscrawfor@gmail.com', '48181acd22b3edaebc8a447868a7df7ce629920a', 0),
-(2, 'RRRRAAWWR', 'Chewbacca', 'IhateHAN@gmail.com', '177538037189398e459160a3ddc53f04a394062e', 0),
-(3, 'DePaola', 'Frankie', 'f@f.com', '890a492c4fc7a01e4582fc6774ffb8a9e01f14d5', 0),
-(4, 'DePaola', 'Frankie', 'f@f.com', '890a492c4fc7a01e4582fc6774ffb8a9e01f14d5', 0),
-(5, 'user', 'test', 'test@user.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 0),
-(6, 'user2', 'test2', 't2@user2.com', '51eac6b471a284d3341d8c0c63d0f1a286262a18', 2),
-(7, 'user3', 'test3', 't3@user3.com', 'afc97ea131fd7e2695a98ef34013608f97f34e1d', 1);
+INSERT INTO `user` (`user_id`, `last_name`, `first_name`, `email`, `password`) VALUES
+(1, 'Crawford', 'Michael', 'mscrawfor@gmail.com', '48181acd22b3edaebc8a447868a7df7ce629920a'),
+(2, 'RRRRAAWWR', 'Chewbacca', 'IhateHAN@gmail.com', '177538037189398e459160a3ddc53f04a394062e'),
+(3, 'DePaola', 'Frankie', 'f@f.com', '890a492c4fc7a01e4582fc6774ffb8a9e01f14d5'),
+(4, 'DePaola', 'Frankie', 'f@f.com', '890a492c4fc7a01e4582fc6774ffb8a9e01f14d5'),
+(5, 'user', 'test', 'test@user.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'),
+(6, 'user2', 'test2', 't2@user2.com', '51eac6b471a284d3341d8c0c63d0f1a286262a18'),
+(7, 'user3', 'test3', 't3@user3.com', 'afc97ea131fd7e2695a98ef34013608f97f34e1d');
 
 -- --------------------------------------------------------
 -- Table structure for table `reviews`
