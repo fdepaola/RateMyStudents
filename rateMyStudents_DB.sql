@@ -24,26 +24,9 @@ USE `ratemystudents`;
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `departments`
---
-
-CREATE TABLE IF NOT EXISTS `departments` (
-  `department_id` int(2) NOT NULL AUTO_INCREMENT,
-  `department_name` varchar(30) NOT NULL,
-  PRIMARY KEY (`department_id`),
-  UNIQUE KEY `department_id` (`department_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `departments`
---
-
-INSERT INTO `departments` (`department_id`, `department_name`) VALUES
-(1, 'math'),
-(2, 'physics');
 
 -- --------------------------------------------------------
+--
 
 --
 -- Table structure for table `student`
@@ -53,27 +36,14 @@ CREATE TABLE IF NOT EXISTS `student` (
   `student_id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
-  `smart` int(11) NOT NULL,
-  `hot` int(11) NOT NULL,
-  `lazy` int(11) NOT NULL,
-  `smelly` int(11) NOT NULL,
-  `integrity` int(11) NOT NULL,
-  `vote` int(11) NOT NULL DEFAULT '0',
-  `major` varchar(50) DEFAULT NULL,
-  `comments` blob,
-  PRIMARY KEY (`student_id`),
-  UNIQUE KEY `student_id` (`student_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+  PRIMARY KEY (`student_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3;
 
 --
 -- Dumping data for table `student`
 --
 
-INSERT INTO `student` (`student_id`, `first_name`, `last_name`, `smart`, `hot`, `lazy`, `smelly`, `integrity`, `vote`, `major`, `comments`) VALUES
-(1, 'Bob', 'Jones', 0, 0, 0, 0, 0, 0, 'CPSC', NULL),
-(2, 'Luke', 'Skywalker', 0, 0, 0, 0, 0, 0, 'Lame', NULL);
 
--- --------------------------------------------------------
 
 --
 -- Table structure for table `user`
@@ -86,9 +56,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `email` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
   `department_id` int(2) NOT NULL,
-  PRIMARY KEY (`user_id`),
-  UNIQUE KEY `user_id` (`user_id`),
-  UNIQUE KEY `user_id_2` (`user_id`)
+  PRIMARY KEY (`user_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
@@ -103,6 +71,29 @@ INSERT INTO `user` (`user_id`, `last_name`, `first_name`, `email`, `password`, `
 (5, 'user', 'test', 'test@user.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 0),
 (6, 'user2', 'test2', 't2@user2.com', '51eac6b471a284d3341d8c0c63d0f1a286262a18', 2),
 (7, 'user3', 'test3', 't3@user3.com', 'afc97ea131fd7e2695a98ef34013608f97f34e1d', 1);
+
+-- --------------------------------------------------------
+-- Table structure for table `reviews`
+--
+
+CREATE TABLE IF NOT EXISTS `reviews` (
+  `review_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL,
+  `smart` int(11) NOT NULL,
+  `hot` int(11) NOT NULL,
+  `lazy` int(11) NOT NULL,
+  `smelly` int(11) NOT NULL,
+  `integrity` int(11) NOT NULL,
+  `vote` int(11) NOT NULL DEFAULT '0',
+  `major` varchar(50) DEFAULT NULL,
+  `comments` blob,
+  
+  FOREIGN KEY (user_id) REFERENCES user(user_id),
+  FOREIGN KEY (student_id) REFERENCES student(student_id),
+  PRIMARY KEY (`review_id`)
+
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
