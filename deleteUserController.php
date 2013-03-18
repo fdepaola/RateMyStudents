@@ -9,5 +9,5 @@
 	$query = "DELETE FROM user WHERE first_name='$first_name' AND last_name='$last_name'";
 	$result = mysqli_query($db, $query) or die(mysqli_error($db));
 
-	header("Location: login.html");
+	header("Location: loginView.php");
 ?>

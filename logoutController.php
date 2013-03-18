@@ -2,5 +2,5 @@
 	session_start();
 	session_destroy();
 	unset($_SESSION['email']);
-	header("Location: login.html");
+	header("Location: loginView.php");
 ?>

@@ -17,7 +17,7 @@
 		
 	if (!isset($rowExists)) {
 		echo "Wrong password/Username combination";
-		header("Location: login.html");
+		header("Location: loginView.php");
 	}
 	else {
 		$_SESSION['email'] = "$em";
