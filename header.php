@@ -8,17 +8,7 @@ if(session_id() == '') {
 <div id="templatemo_header">
 	<h2>rate my students</h2>
         
-<?php 
-        $user_id = $_SESSION['user_id']; 
-        if (is_null($user_id))
-        {
-                echo "You are not logged in";
-        }
-        else 
-        {
-                echo "You are logged in as: $user_id"; 
-        }
-?>
+
         
 </div>
 	
@@ -41,3 +31,17 @@ if(session_id() == '') {
         <li><input style="margin-top: 10px; margin-left: 5px;"></li>
 	</ul>       
 </div>
+
+<?php 
+        $user_id = $_SESSION['user_id'];
+        echo "<div style='top: -10px'>"; 
+        if (is_null($user_id))
+        {
+                echo "You are not logged in";
+        }
+        else 
+        {
+                echo "You are logged in as: $user_id"; 
+        }
+        echo "</div>"; 
+?>
