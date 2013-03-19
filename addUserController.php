@@ -19,6 +19,7 @@
 	{
 		$query = "SELECT department_id FROM departments WHERE department_name = '$dept'";
 		$result = mysqli_query($db, $query) or die(mysqli_error($db));
+		$did = ""; 
 		if($row = mysqli_fetch_array($result)) 
 		{
 			$did = $row['department_id'];

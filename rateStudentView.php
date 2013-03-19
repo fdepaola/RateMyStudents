@@ -41,7 +41,12 @@
 							<th>Rate student</th>
 						</tr>";
 				$student_id	= $_GET['student_id'];	
-				$query = "SELECT * FROM student WHERE student_id=$student_id";
+				$id = $student_id; 
+					$query = "SELECT s.student_id as student_id, s.first_name as first_name, s.last_name as last_name, 
+				COUNT( r.review_id ) AS count, FORMAT(AVG( r.smart ),1) as smart , FORMAT(AVG( r.hot ),1) as hot , 
+				FORMAT(AVG( r.lazy ),1) as lazy , FORMAT(AVG( r.smelly ),1) as smelly , 
+				FORMAT(AVG( r.integrity ),1) as integrity , SUM( r.vote ) as vote
+				FROM student AS s INNER JOIN reviews AS r ON r.student_id = s.student_id WHERE s.student_id = $student_id;";
 				$result = mysqli_query($db, $query) or die(mysqli_error($db));
 				while($row = mysqli_fetch_array($result)) 
 				{
@@ -70,17 +75,21 @@
 						 </tr>";
 					echo "</table>";
 				} 
+				echo $_SESSION['user_id']; 
 			?>
 
 		<form method="post" action="rateStudentController.php">
+			<input type="hidden" name="student_id" value=<? echo "\"$student_id\"" ?>/>
 			<table>
-				<tr><td>smart</td><td>not smart<input type="range" name="smart" min="1" max="10" step="1" value="5"/>smart</td></tr>
-				<tr><td>hot</td><td>not hot<input type="range" name="hot" min="1" max="10" step="1" value="5"/>hot</td></tr>
-				<tr><td>lazy</td><td>not lazy<input type="range" name="lazy" min="1" max="10" step="1" value="5"/>lazy</td></tr>
-				<tr><td>smelly</td><td>not smelly<input type="range" name="smelly" min="1" max="10" step="1" value="5"/>smelly</td></tr>
-				<tr><td>integrity</td><td>not integrity<input type="range" name="integrity" min="1" max="10" step="1" value="5"/>integrity</td></tr>
+				<tr><td>smart</td><td>not smart</td><td><input type="range" name="smart" min="1" max="10" step="1" value="5"/></td><td>smart</td></tr>
+				<tr><td>hot</td><td>not hot</td><td><input type="range" name="hot" min="1" max="10" step="1" value="5"/></td><td>hot</td></tr>
+				<tr><td>lazy</td><td>not lazy</td><td><input type="range" name="lazy" min="1" max="10" step="1" value="5"/></td><td>lazy</td></tr>
+				<tr><td>smelly</td><td>not smelly</td><td><input type="range" name="smelly" min="1" max="10" step="1" value="5"/></td><td>smelly</td></tr>
+				<tr><td>integrity</td><td>not integrity</td><td><input type="range" name="integrity" min="1" max="10" step="1" value="5"/></td><td>integrity</td></tr>
+			</table>
+			<table>
 				<tr><td>vote</td><td><input type="checkbox" name="vote" value="checked"/>
-				<tr><td>comments</td><td><input type="text" name="comments" id="comments"/> 
+				<tr><td>comments</td><td><textarea id="comment" name="comments">Enter your comment here!</textarea>
 				<tr><td>submit</td><td><input type="submit" value="submit" /></td></tr>
 			</table>
 		</form>

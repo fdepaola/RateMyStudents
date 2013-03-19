@@ -34,7 +34,6 @@
 					</table>
 				</form>
 				<?php 
-					echo "Note: one cannot actually rate students yet.";
 					require("listStudents.php");
 				?>
 			</div>
