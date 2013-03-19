@@ -14,6 +14,15 @@
 			else if (field.value == '') field.value = field.defaultValue;
 		}
 	</script>
+	<style>
+		td,th {
+			padding-left: 2em;
+		}
+		td:hover,th:hover {
+			color: #999;
+			cursor: pointer;
+		}
+	</style>
 </head>
 
 <body>
@@ -24,18 +33,10 @@
 	
 		<div id="templatemo_main">
 			<div class="col_w620 float_l">
-				<b> Update password </b>
-				<form method="post" action="changePassword.php">
-					<table>
-						<tr><td>Current Password:</td><td><input type="password" id="opw" name="opw" /></td></tr>
-						<tr><td>Choose new Password:</td><td><input type="password" id="pw" name="pw" /></td></tr>
-						<tr><td>Re-type new Password:</td><td><input type="password" id="pw2" name="pw2" /></td></tr>
-						<tr><td><input type="submit" value="change" /></td></tr>
-					</table>
-				</form>
 				<?php 
 					require("listStudents.php");
 				?>
+
 			</div>
 			<div class="cleaner"></div>
 		</div> <!-- end of main -->

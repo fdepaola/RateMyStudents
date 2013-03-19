@@ -31,7 +31,6 @@ function clearText(field)
                     <tr>
                         <td><input type="submit" value="delete user" /></td>
                     </tr>
-
 				</table>
 			</form>
         </div>
