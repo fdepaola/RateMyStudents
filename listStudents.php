@@ -50,7 +50,7 @@
 	echo "</table>";
 	echo "<h2>Unrated Students</h2>"; 
 	$query = "SELECT student_id,first_name,last_name from student where student_id not in (SELECT student_id FROM reviews);";
-		echo "<table><tr><th>First name</th><th>Last name</th><th>Rate student</th></tr>"; 
+	echo "<table><tr><th>First name</th><th>Last name</th><th>Rate student</th></tr>"; 
 	$result = mysqli_query($db, $query)
 		or die(mysqli_error($db));
 

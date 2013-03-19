@@ -19,7 +19,8 @@
 <div id="templatemo_body_wrapper">
 <div id="templatemo_wrapper">
 	    
-    <?php require("header.php"); ?>
+<?php require("header.php"); ?>
+
     <div id="templatemo_main">
 		<div class="col_w620 float_l">
 			<form method = "post" action = "addStudentController.php">

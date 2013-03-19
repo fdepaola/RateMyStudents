@@ -18,10 +18,6 @@
 		td,th {
 			padding-left: 2em;
 		}
-		td:hover,th:hover {
-			color: #999;
-			cursor: pointer;
-		}
 	</style>
 </head>
 
