@@ -37,7 +37,6 @@
 							<th>Integrity</th>
 							<th>Vote</th>
 							<th>Major</th>
-							<th>Comments</th>
 							<th>Rate student</th>
 						</tr>";
 				$student_id	= $_GET['student_id'];	
@@ -46,7 +45,7 @@
 				$query = "SELECT s.student_id as student_id, s.first_name as first_name, s.last_name as last_name, 
 				COUNT( r.review_id ) AS count, FORMAT(AVG( r.smart ),1) as smart , FORMAT(AVG( r.hot ),1) as hot , 
 				FORMAT(AVG( r.lazy ),1) as lazy , FORMAT(AVG( r.smelly ),1) as smelly , 
-				FORMAT(AVG( r.integrity ),1) as integrity , SUM( r.vote ) as vote
+				FORMAT(AVG( r.integrity ),1) as integrity , SUM( r.vote ) as vote , s.major as major
 				FROM student AS s INNER JOIN reviews AS r ON r.student_id = s.student_id WHERE s.student_id = $student_id;";
 				
 				$result = mysqli_query($db, $query) or die(mysqli_error($db));
@@ -73,12 +72,21 @@
 							<th>$integrity</th>
 							<th>$vote</th>
 							<th>$major</th>
-							<th>$comments</th>
 							<th> <a href=rateStudentView.php?student_id=$student_id>Rate Student</a> </th>
 						 </tr>";
 					echo "</table>";
 				} 
-				echo $_SESSION['user_id']; 
+
+				$query = "SELECT r.comments as comments FROM reviews r NATURAL JOIN student s WHERE s.student_id = $student_id;";
+          		$result = mysqli_query($db, $query) 
+            		or die("Error Querying Database");
+          		while($row = mysqli_fetch_array($result)) 
+          		{
+            		$comments = $row['comments'];
+            		echo "<table>";
+          			echo "<tr><th>$comments</th></tr>";
+          			echo "</table>";
+        		}                 
 ?>
 
 			</div>
