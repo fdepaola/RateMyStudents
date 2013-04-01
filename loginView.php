@@ -14,8 +14,7 @@
         }
     </script>
 </head>
-    <body style="display:inline-block;">
-    	<marquee>
+    <body>
         <div id="templatemo_body_wrapper"  style="text-align: center;">
         <div id="templatemo_wrapper"  style="text-align: center;">
         	    
@@ -51,6 +50,5 @@
         	<div class="cleaner"></div>
         </div> <!-- end of templatemo wrapper -->
         </div> <!-- end of templatemo body wrapper -->
-        </marquee>
     </body>
 </html>
