@@ -16,11 +16,11 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Database: `session`
+-- Database: `ratemystudents`
 --
-CREATE DATABASE IF NOT EXISTS session;
-GRANT ALL PRIVILEGES ON session.* to 'assist'@'localhost' identified by 'assist';
-USE session;
+CREATE DATABASE IF NOT EXISTS ratemystudents;
+GRANT ALL PRIVILEGES ON ratemystudents.* to 'assist'@'localhost' identified by 'assist';
+USE ratemystudents;
 
 --
 -- Table structure for table `departments`
