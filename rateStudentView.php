@@ -62,7 +62,6 @@
 					$integrity = $row['integrity'];
 					$vote = $row['vote'];
 					$major = $row['major'];
-					$comments = $row['comments'];
 					echo "<tr>
 							<th>$first_name</th>
 							<th>$last_name</th>
@@ -73,10 +72,20 @@
 							<th>$integrity</th>
 							<th>$vote</th>
 							<th>$major</th>
-							<th>$comments</th>
 						 </tr>";
 					echo "</table>";
 				} 
+
+				$query = "SELECT r.comments as comments FROM reviews r NATURAL JOIN student s WHERE s.student_id = $student_id;";
+          		$result = mysqli_query($db, $query) 
+            		or die("Error Querying Database");
+          		while($row = mysqli_fetch_array($result)) 
+          		{
+            		$comments = $row['comments'];
+            		echo "<table>";
+          			echo "<tr><th>$comments</th></tr>";
+          			echo "</table>";
+        		}                 
 				echo $_SESSION['user_id']; 
 ?>
 

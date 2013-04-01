@@ -23,8 +23,8 @@
 		$comments = $_POST['comments'];
 		
 		$query = "INSERT INTO `ratemystudents`.`reviews` 
-			(`user_id`, `student_id`, `smart`, `hot`, `lazy`, `smelly`, `integrity`, `vote`) 
-			VALUES ('$user_id', '$student_id', '$smart', '$hot', '$lazy', '$smelly', '$integrity', '$vote')";
+			(`user_id`, `student_id`, `smart`, `hot`, `lazy`, `smelly`, `integrity`, `vote`, `comments`) 
+			VALUES ('$user_id', '$student_id', '$smart', '$hot', '$lazy', '$smelly', '$integrity', '$vote', '$comments')";
 
 		$result = mysqli_query($db, $query) or die(mysqli_error($db));
 		header("Location: home.php");
