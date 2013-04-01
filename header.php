@@ -6,7 +6,7 @@ if(session_id() == '') {
 
 
 <div id="templatemo_header">
-	<h2>rate my students</h2>
+	<h2 style="text-align: center;">Rate My Students</h2>
         
 
         
