@@ -22,7 +22,7 @@
             
             <div id="templatemo_main">
             	<div class="col_w620 float_l">
-                    <b> login </b>			
+                    <b> Login </b>			
                     <form method="post" action="loginController.php">
         				<table>
         					<tr><td>E-Mail Address:</td><td><input type="text" id="email" name="email" /></td></tr>
@@ -30,7 +30,7 @@
         					<tr><td><input type="submit" value="submit" /></td></tr>
         				</table>
                     </form>
-                    <b> or sign up </b>
+                    <b> Or Sign Up </b>
                     <form method="post" action="addUserController.php">
                         <table>
                             <tr><td>First Name:</td><td><input type="text" id="firstname" name="firstname" /></td></tr>

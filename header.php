@@ -14,21 +14,21 @@ if(session_id() == '') {
 	
 <div id="templatemo_menu">
 	<ul>
-        <li><a href="home.php">home</a></li>
-        <li><a href="addStudentView.php">add student</a></li>
+        <li><a href="home.php">Home</a></li>
+        <li><a href="addStudentView.php">Add student</a></li>
 <?php 
         $user_id = $_SESSION['user_id']; 
         if (is_null($user_id))
         {
-                echo "<li><a href=\"loginView.php\">log in</a></li>";
+                echo "<li><a href=\"loginView.php\">Log in</a></li>";
         }
         else
         {
-                echo "<li><a href=\"logoutController.php\">log out</a></li>";
+                echo "<li><a href=\"logoutController.php\">Log out</a></li>";
         }
 ?>
-        <li><a href="optionsView.php">options</a></li>
-        <li><input style="margin-top: 10px; margin-left: 5px;"></li>
+        <li><a href="optionsView.php">Options</a></li>
+        <li><input style="margin-top: 10px; margin-left: 265px;"></li>
 	</ul>       
 </div>
 

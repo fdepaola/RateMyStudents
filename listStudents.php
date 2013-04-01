@@ -1,7 +1,7 @@
 <?php
 	$db = mysqli_connect('localhost', 'root', '', 'ratemystudents')
 		or die(mysqli_error($db));
-	echo "<h2>Students</h2>";
+	echo "<h2 style=\"text-align: center;\">Students</h2>";
 	echo "<table>		
 			<tr>
 				<th>First name</th>

@@ -98,13 +98,16 @@ h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 	clear: both;
 	width: 940px;
 	height: 53px;
-	background: url(images/templamtemo_menu.png)
+	background: url(images/templamtemo_menu.png);
 }
 
 #templatemo_menu ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #templatemo_menu ul li {
