@@ -16,7 +16,7 @@
 </head>
     <body>
         <div id="templatemo_body_wrapper">
-        <div id="templatemo_wrapper">
+        <div id="templatemo_wrapper" style="text-align: center;">
         	    
             <?php require("header.php"); ?>
             
@@ -25,7 +25,7 @@
                     <b> Login </b>			
                     <form method="post" action="loginController.php">
         				<table>
-        					<tr><td>E-Mail Address:</td><td><input type="text" id="email" name="email" /></td></tr>
+        					<tr><td >E-Mail Address:</td><td><input type="text" id="email" name="email" /></td></tr>
         					<tr><td>Enter your Password:</td><td><input type="password" id="pw" name="pw" /></td></tr>
         					<tr><td><input type="submit" value="submit" /></td></tr>
         				</table>

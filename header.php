@@ -15,12 +15,12 @@ if(session_id() == '') {
 <div id="templatemo_menu">
 	<ul>
         <li><a href="home.php">Home</a></li>
-        <li><a href="addStudentView.php">Add student</a></li>
+        <li><a href="addStudentView.php">Add Student</a></li>
 <?php 
         $user_id = $_SESSION['user_id']; 
         if (is_null($user_id))
         {
-                echo "<li><a href=\"loginView.php\">Log in</a></li>";
+                echo "<li><a href=\"loginView.php\">Log In</a></li>";
         }
         else
         {

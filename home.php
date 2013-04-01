@@ -28,7 +28,7 @@
 		<?php require("header.php"); ?>
 	
 		<div id="templatemo_main">
-			<div class="col_w620 float_l">
+			<div class="col_w620 float_l" style="text-align: center;">
 				<?php 
 					require("listStudents.php");
 				?>
