@@ -216,6 +216,7 @@ h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 	width: 940px;
 	padding: 30px 0; 
 	background: url(images/templatemo_content.png) repeat-y
+	text-align: center;
 }
 
 #templatemo_main p {
