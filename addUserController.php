@@ -38,8 +38,15 @@
 		}
 		$query = "INSERT INTO user (last_name, first_name, email, password, department_id) 
 					VALUES ('$ln', '$fn', '$em', SHA('$pw'), '$did')";
+		$result = mysqli_query($db,$query) or die(mysqli_error($db)); 
+		$query = "SELECT * FROM user WHERE email = '$em';"; 
 		$result = mysqli_query($db, $query) or die(mysqli_error($db));
+		$id = "butts"; 
+		if($row = mysqli_fetch_array($result)) {
+			$id = $row["user_id"]; 
+		}
 		$_SESSION['email'] = "$em";
+		$_SESSION['user_id'] = "$id"; 
 		header("Location: home.php");
 	}
 ?>

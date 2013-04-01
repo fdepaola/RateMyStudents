@@ -14,9 +14,10 @@
         }
     </script>
 </head>
-    <body>
-        <div id="templatemo_body_wrapper">
-        <div id="templatemo_wrapper" style="text-align: center;">
+    <body style="display:inline-block;">
+    	<marquee>
+        <div id="templatemo_body_wrapper"  style="text-align: center;">
+        <div id="templatemo_wrapper"  style="text-align: center;">
         	    
             <?php require("header.php"); ?>
             
@@ -50,5 +51,6 @@
         	<div class="cleaner"></div>
         </div> <!-- end of templatemo wrapper -->
         </div> <!-- end of templatemo body wrapper -->
+        </marquee>
     </body>
 </html>
