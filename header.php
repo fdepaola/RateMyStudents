@@ -44,8 +44,9 @@ if(session_id() == '') {
 			$db = mysqli_connect('localhost', 'root', '', 'ratemystudents')
 				or die(mysqli_error($db));
         		
-        		$query = "SELECT * FROM user WHERE user_id = $user_id;"; 
-        		$result = mysqli_query($db,$query) or die(mysqli_error($db)); 
+        		$query = $db->prepare("SELECT * FROM user WHERE user_id = ?;");
+        		$query->bindParam(1,$user_id);
+        		$result = $query->execute(); 
         		if($row = mysqli_fetch_array($result)) {
         			$name = $row["first_name"];
         			echo "You are logged in as: $name";
