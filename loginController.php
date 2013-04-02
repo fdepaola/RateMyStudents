@@ -6,10 +6,11 @@
 	$em = $_POST['email'];
 	$pw = $_POST['pw'];
 	$em = mysqli_real_escape_string($db,trim($em));
-	$query = "SELECT user_id, email, password FROM user WHERE email='$em' AND password=sha('$pw')";
+	$query = $db->prepare("SELECT user_id, email, password FROM user WHERE email= ? AND password=sha(?)");
+	$query->bindParam(1,$em);
+	$query->bindParam(2,$pw);
 	
-	$result = mysqli_query($db, $query) 
-        or die(mysqli_error($db));
+	$result = $query->execute();
     $id = ""; 
 
 	while ($row = mysqli_fetch_array($result)) {
