@@ -17,8 +17,9 @@
 	}
 	else 
 	{
-		$query = "SELECT department_id FROM departments WHERE department_name = '$dept'";
-		$result = mysqli_query($db, $query) or die(mysqli_error($db));
+		$query = $db->prepare("SELECT department_id FROM departments WHERE department_name = ?");
+		$query->bindParam(1,$dept);
+		$result = $query->execute();
 		$did = ""; 
 		if($row = mysqli_fetch_array($result)) 
 		{
@@ -26,21 +27,30 @@
 		} 
 		else 
 		{
-			$query = "INSERT INTO departments (department_name) VALUES ('$dept')";
-			$result = mysqli_query($db, $query) or die(mysqli_error($db));
+			$query = $db->prepare("INSERT INTO departments (department_name) VALUES (?)");
+			$query-> bindParam(1,$dept);
+			$result = $query->execute();
 			
-			$query = "SELECT department_id FROM departments WHERE department_name = '$dept'";
-			$result = mysqli_query($db, $query) or die(mysqli_error($db));
+			$query = $db->prepare("SELECT department_id FROM departments WHERE department_name = ?");
+			$query->bindParam(1,$dept);
+			$result = $query->execute();
 			while($row = mysqli_fetch_array($result)) 
 			{
 				$did = $row['department_id'];
 			}
 		}
-		$query = "INSERT INTO user (last_name, first_name, email, password, department_id) 
-					VALUES ('$ln', '$fn', '$em', SHA('$pw'), '$did')";
-		$result = mysqli_query($db,$query) or die(mysqli_error($db)); 
-		$query = "SELECT * FROM user WHERE email = '$em';"; 
-		$result = mysqli_query($db, $query) or die(mysqli_error($db));
+		$query = $db->prepare("INSERT INTO user (last_name, first_name, email, password, department_id) 
+					VALUES (?, ?, ?, ?, ?)");
+		$query->bindParam(1,$ln);
+		$query->bindParam(2,$fn);
+		$query->bindParam(3,$em);
+		$query->bindParam(4,SHA('$pw');
+		$query->bindParam(5,$did);
+		$result = query->execute(); 
+		
+		$query = $db->prepare("SELECT * FROM user WHERE email = ?;");
+		$query->bindParam(1,$em);
+		$result = $query->execute();
 		$id = "butts"; 
 		if($row = mysqli_fetch_array($result)) {
 			$id = $row["user_id"]; 
