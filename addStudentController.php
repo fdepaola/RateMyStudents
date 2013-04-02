@@ -14,9 +14,9 @@
 	$lastname = $_POST['lastname'];
 	$major = $_POST['major'];
 	
-	$query->execute();
+	
 
-	$result = mysqli_query($db, $query) or die(mysqli_error($db));
+	$result = $query->execute();
 
 	header("Location: home.php");
 ?>
