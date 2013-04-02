@@ -16,6 +16,7 @@ if(session_id() == '') {
 	<ul>
         <li><a href="home.php">Home</a></li>
         <li><a href="addStudentView.php">Add Student</a></li>
+		<li><a href="searchstudents.php">Search Student</a></li>
 <?php 
         $user_id = $_SESSION['user_id']; 
         if (is_null($user_id))
@@ -28,7 +29,7 @@ if(session_id() == '') {
         }
 ?>
         <li><a href="optionsView.php">Options</a></li>
-        <li><input style="margin-top: 10px; margin-left: 265px;"></li>
+        
 	</ul>       
 </div>
 
@@ -41,8 +42,7 @@ if(session_id() == '') {
         }
         else 
         {
-			$db = mysqli_connect('localhost', 'root', '', 'ratemystudents')
-				or die(mysqli_error($db));
+			include 'dbconnect.php';
         		
         		$query = "SELECT * FROM user WHERE user_id = $user_id;"; 
         		$result = mysqli_query($db,$query) or die(mysqli_error($db)); 

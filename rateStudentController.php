@@ -1,7 +1,6 @@
 <?php
 	session_start();
-	$db = mysqli_connect('localhost', 'root', '', 'ratemystudents')
-		 or die(mysqli_error($db));
+	include 'dbconnect.php';
 
 	$user_id = $_SESSION['user_id']; 
 
@@ -22,7 +21,7 @@
 		$major = $_POST['major'];
 		$comments = $_POST['comments'];
 		
-		$query = "INSERT INTO `ratemystudents`.`reviews` 
+		$query = "INSERT INTO reviews
 			(`user_id`, `student_id`, `smart`, `hot`, `lazy`, `smelly`, `integrity`, `vote`, `comments`) 
 			VALUES ('$user_id', '$student_id', '$smart', '$hot', '$lazy', '$smelly', '$integrity', '$vote', '$comments')";
 

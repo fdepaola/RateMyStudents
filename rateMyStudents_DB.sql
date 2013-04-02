@@ -22,7 +22,7 @@ CREATE DATABASE IF NOT EXISTS ratemystudents;
 GRANT ALL PRIVILEGES ON ratemystudents.* to 'assist'@'localhost' identified by 'assist';
 USE ratemystudents;
 
--- --------------------------------------------------------
+----------------------------------------------------------
 
 --
 -- Table structure for table `departments`

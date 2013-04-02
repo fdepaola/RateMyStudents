@@ -28,13 +28,13 @@
 ?>
 
 		<form method="post" action="rateStudentController.php">
-			<input type="hidden" name="student_id" value=<? echo "\"$student_id\"" ?>/>
+			<input type="hidden" name="student_id" value=<?php echo "\"$student_id\"" ?> />
 			<table>
 				<tr><td>smart</td><td>not smart</td><td><input type="range" name="smart" min="1" max="10" step="1" value="5"/></td><td>smart</td></tr>
 				<tr><td>hot</td><td>not hot</td><td><input type="range" name="hot" min="1" max="10" step="1" value="5"/></td><td>hot</td></tr>
 				<tr><td>lazy</td><td>not lazy</td><td><input type="range" name="lazy" min="1" max="10" step="1" value="5"/></td><td>lazy</td></tr>
 				<tr><td>smelly</td><td>not smelly</td><td><input type="range" name="smelly" min="1" max="10" step="1" value="5"/></td><td>smelly</td></tr>
-				<tr><td>integrity</td><td>not integrity</td><td><input type="range" name="integrity" min="1" max="10" step="1" value="5"/></td><td>integrity</td></tr>
+				<tr><td>integrity</td><td>no integrity</td><td><input type="range" name="integrity" min="1" max="10" step="1" value="5"/></td><td>integrity</td></tr>
 			</table>
 			<table>
 				<tr><td>vote</td><td><input type="checkbox" name="vote" value="checked"/>

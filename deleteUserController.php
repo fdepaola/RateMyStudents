@@ -1,7 +1,6 @@
 <?php
 	session_start();
-	$db = mysqli_connect('localhost', 'root', '', 'ratemystudents')
-		or die(mysqli_error($db));
+	include 'dbconnect.php';
 
 	$user_email = $_POST['user_email'];
 	$user_password = $_POST['user_password'];

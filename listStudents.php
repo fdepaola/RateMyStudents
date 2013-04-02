@@ -1,6 +1,5 @@
 <?php
-	$db = mysqli_connect('localhost', 'root', '', 'ratemystudents')
-		or die(mysqli_error($db));
+	include 'dbconnect.php';
 	echo "<h2 style=\"text-align: center;\">Students</h2>";
 	echo "<table>		
 			<tr>
