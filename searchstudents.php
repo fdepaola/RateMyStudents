@@ -33,19 +33,21 @@
 			if(isset($_POST['target']))
 			{
 				$target = $_POST['target'];
-			    $query = "SELECT first_name,last_name FROM student WHERE first_name LIKE '%$target%' OR last_name LIKE '%$target%'";  
+			    $query = "SELECT student_id, first_name,last_name FROM student WHERE first_name LIKE '%$target%' OR last_name LIKE '%$target%'";  
 		   		$result = mysqli_query($db, $query) or die(mysqli_error($db));
 				$beenInWhile = 0;
 				echo "<table>";
 				while($row = mysqli_fetch_array($result)) 
 				{
 					$beenInWhile = 1;
+					$student_id = $row['student_id'];
 					$first_name = $row['first_name'];
 					$last_name = $row['last_name'];
 					$lenF = strlen($first_name);
-					echo "<tr>
-						<th>$first_name $last_name</th>
-			 			</tr>";
+				
+		echo "<tr><td>$first_name</td><td>$last_name</td><td><a href=studentView.php?student_id=$student_id>View student</a></td></tr>";
+
+		
 				} 
 				if($beenInWhile ==0 )
 				{
