@@ -29,8 +29,10 @@
 			$pw = $_POST['pw'];
 			$pw2 = $_POST['pw2'];
 			
-			$query = "SELECT email FROM user WHERE email = '$em' AND password = SHA('$opw')";
-			$result = mysqli_query($db, $query) or die(mysqli_error($db));
+			$query = $db->prepare("SELECT email FROM user WHERE email = ? AND password = SHA(?)");
+			$query->bindParam(1,$em);
+			$query->bindParam(2,$opw);
+			$result = $query->execute();
 				
 			while ($row = mysqli_fetch_array($result)) 
 			{
@@ -44,12 +46,16 @@
 			}
 			else 
 			{
-				$query = "UPDATE user
-							SET password = SHA('$pw') WHERE email = '$em' AND password = SHA('$opw')";
-				$result = mysqli_query($db, $query) or die(mysqli_error($db));	
+				$query = $db->prepare("UPDATE user SET password = SHA(?) WHERE email = ? AND password = SHA(?)");
+				$query->bindParam(1,$pw);
+				$query->bindParam(2,$em);
+				$query->bindParam(3,SHA($opw));
+				$result = $query->execute();	
 				echo "<b>Password successfully changed.</b></br></br>";
 				echo "<a href=\"home.php\">Return home</a>";
 			}
+		?>
+
 		?>
 
 		</div> <!-- end of main -->
