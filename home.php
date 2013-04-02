@@ -5,7 +5,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>rate my students</title>
+	<title>Rate My Students</title>
 	<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
 	<script language="javascript" type="text/javascript">
 		function clearText(field)
