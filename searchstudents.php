@@ -32,7 +32,7 @@
 			$db = mysqli_connect('localhost', 'root', '', 'ratemystudents') or die(mysqli_error($db));
 			if(isset($_POST['target']))
 			{
-				$target = $_POST['target'];
+				$target = mysqli_escape_string($db, $_POST['target']);
 			    $query = "SELECT student_id, first_name,last_name FROM student WHERE first_name LIKE '%$target%' OR last_name LIKE '%$target%'";  
 		   		$result = mysqli_query($db, $query) or die(mysqli_error($db));
 				$beenInWhile = 0;

@@ -2,9 +2,9 @@
 	session_start();
 	include 'dbconnect.php';
 
-	$firstname = $_POST['firstname'];
-	$lastname = $_POST['lastname'];
-	$major = $_POST['major'];
+	$firstname = mysqli_escape_string($db, $_POST['firstname']);
+	$lastname = mysqli_escape_string($db, $_POST['lastname']);
+	$major = mysqli_escape_string($db, $_POST['major']);
 	
 	$query = "INSERT INTO student(`last_name`, `first_name`, `major`) 
 		VALUES ('$lastname', '$firstname', '$major')";

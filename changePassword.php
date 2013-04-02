@@ -25,9 +25,9 @@
 			$db = mysqli_connect('localhost', 'root', '', 'ratemystudents') or die(mysqli_error($db));
 				
 			$em = $_SESSION['email'];
-			$opw = $_POST['opw'];
-			$pw = $_POST['pw'];
-			$pw2 = $_POST['pw2'];
+			$opw = mysqli_escape_string($db, $_POST['opw']);
+			$pw = mysqli_escape_string($db, $_POST['pw']);
+			$pw2 = mysqli_escape_string($db, $_POST['pw2']);
 			
 			$query = "SELECT email FROM user WHERE email = '$em' AND password = SHA('$opw')";
 			$result = mysqli_query($db, $query) or die(mysqli_error($db));

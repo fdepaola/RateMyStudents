@@ -17,6 +17,7 @@ if(session_id() == '') {
         <li><a href="home.php">Home</a></li>
         <li><a href="addStudentView.php">Add Student</a></li>
 		<li><a href="searchstudents.php">Search Student</a></li>
+        <li><a href="poodle.jpg">Poodle in a sidecar</a></li>
 <?php 
         $user_id = $_SESSION['user_id']; 
         if (is_null($user_id))

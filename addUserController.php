@@ -2,12 +2,12 @@
 	session_start();
 	include 'dbconnect.php';
 		
-	$fn = $_POST['firstname'];
-	$ln = $_POST['lastname'];
-	$em = $_POST['email'];
-	$pw = $_POST['pw'];
-	$pw2 = $_POST['pw2'];
-	$dept = $_POST['dept'];
+	$fn = mysqli_escape_string($db, $_POST['firstname']);
+	$ln = mysqli_escape_string($db, $_POST['lastname']);
+	$em = mysqli_escape_string($db, $_POST['email']);
+	$pw = mysqli_escape_string($db, $_POST['pw']);
+	$pw2 = mysqli_escape_string($db, $_POST['pw2']);
+	$dept = mysqli_escape_string($db, $_POST['dept']);
 	
 	if($pw != $pw2) 
 	{
