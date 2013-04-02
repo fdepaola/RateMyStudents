@@ -6,8 +6,10 @@
 	$user_email = $_POST['user_email'];
 	$user_password = $_POST['user_password'];
 	
-	$query = "DELETE FROM user WHERE email='$user_email' AND password='$user_password'";
-	$result = mysqli_query($db, $query) or die(mysqli_error($db));
+	$query = $db->prepare("DELETE FROM user WHERE email='$user_email' AND password='$user_password'");
+	$query->bindParam(1,$user_email);
+	$query->bindParam(2,$user_password);
+	$result = $query->execute();
 
 	header("Location: loginView.php");
 ?>
