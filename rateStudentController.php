@@ -22,11 +22,20 @@
 		$major = $_POST['major'];
 		$comments = $_POST['comments'];
 		
-		$query = "INSERT INTO `ratemystudents`.`reviews` 
+		$query = $db->prepare("INSERT INTO `ratemystudents`.`reviews` 
 			(`user_id`, `student_id`, `smart`, `hot`, `lazy`, `smelly`, `integrity`, `vote`, `comments`) 
-			VALUES ('$user_id', '$student_id', '$smart', '$hot', '$lazy', '$smelly', '$integrity', '$vote', '$comments')";
-
-		$result = mysqli_query($db, $query) or die(mysqli_error($db));
+			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+		$query->bindParam(1,$user_id);
+		$query->bindParam(2,$student_id);
+		$query->bindParam(3,$smart);
+		$query->bindParam(4,$hot);
+		$query->bindParam(5,$lazy);
+		$query->bindParam(6,$smelly);
+		$query->bindParam(7,$integrity);
+		$query->bindParam(8,$vote);
+		$query->bindParam(9,$comments);
+		
+		$result = $query->execute();
 		header("Location: home.php");
 		exit();
 	}
