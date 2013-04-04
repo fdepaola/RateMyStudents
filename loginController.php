@@ -5,6 +5,7 @@
 	$em = $_POST['email'];
 	$pw = $_POST['pw'];
 	$em = mysqli_real_escape_string($db,trim($em));
+	$pw = mysqli_real_escape_string($db,trim($pw));
 	$query = "SELECT user_id, email, password FROM user WHERE email='$em' AND password=sha('$pw')";
 	
 	$result = mysqli_query($db, $query) 
